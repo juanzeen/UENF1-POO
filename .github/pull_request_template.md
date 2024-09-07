@@ -1,3 +1,5 @@
+# APAGUE OS TEXTOS BASE ANTES DE CRIAR O PULL REQUEST
+
 ## O que foi feito 
  Descrição sobre o que foi feito no PR (aqui você fala de forma menos técnica o que foi feito)
 
