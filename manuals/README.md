@@ -98,7 +98,33 @@ Depois da sua primeira interação o projeto irá continuar progredindo cada vez
 
 É o comando mais importante para interações depois que você possui um clone do repositório remoto, pois ele pega todas as alterações do remoto e coloca no seu repositório local.
 
-Ainda terminarei de escrever, mas, por enquanto, deixo aqui alguns links para entender melhor essa parte
+O pull funciona de forma muito parecida com o que usamos para dar push, contudo, a ação dele é o contrário do que o push faz. Enquanto o `git push` tem o objetivo de pegar arquivos locais e enviar para o repositório remoto, o `git pull` tem o objetivo de pegar arquivos no repositório remoto e trazer para o local. A forma que utilizamos para lidar com o pull é muito simples, basta seguir os seguintes passos:
+
+1. Ir até a branch desejada para dar o pull;
+2. Executar o comando `git pull nome_do_repositorio_remoto(origin) branch_que_vai_sofrer_push;
+
+Na grande maioria das vezes, o nome do repositorio remoto vai ser origin, então não tem muito com o que se preocupar em relação a isso. Muitas vezes usaremos o pull na branch **main**, mas também podemos fazer isso em outras branches, principalmente caso utilizemos dois computadores diferentes e trabalharmos neles para fazer alguma feature. 
+
+#### Erro comum
+
+```
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint:
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+```
+
+Esse é um erro muito comum, que ocorre porque nosso pull não tem configuração de como deveria funcionar. Os conceitos de merge e rebase são um pouco mais chatos de entender como funciona. De forma muito resumida, o merge cria um novo commit que une uma branch na outra e esse commit é colocado como o último commit na atual storyline de commits que possuímos. Por outro lado, o rebase também cria um commit que une as branches, mas ele realoca toda a storyline de commits depois do commit de união de branches. Recomendo fortemente que leiam os links abaixo para entender melhor como funciona essa parte. 
+
+Mas, existem três formas de resolver esse problema citado anteriormente. A primeira seria fazer um pull do que existe no remoto e depois fazer um merge com base na branch que você quer alterar. O segundo seria um processo similar, mas usando rebase e o terceiro seria usando aquela configuração passada no erro, usando o `git config.pull`. Se quiser uma resolução rápida, basta colocar `git config pull.rebase false`, que esse erro não vai mais acontecer nesse repositório. Mesmo assim, ainda recomendo a leitura desses artigos dos links, pois deixam melhor explicado como funcionam esses comandos.
 
 [Git pull](https://www.atlassian.com/br/git/tutorials/syncing/git-pull)
 
