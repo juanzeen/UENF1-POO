@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torneio</title>
+  <link rel="stylesheet" href="{% static 'tournament/style.css' %}">
+</head>
+<body>
+  <header>
+    <img src="" alt="logo">
+    <ul id="navbar">
+      <li class="navbar-text">Tabelas</li>
+      <li class="navbar-text">Tempos</li>
+    </ul>
+  </header>
+
+  <main>
+    <h1>Título principal</h1>
+    <h3>Descrição - subtítulo</h3>
+
+    <div id="tournament-container">
+      <h2>Tabelas de pontuação</h2>
+      <div class="content-container">
+        <div class="tables-container">
+          <h2>Torneio de corredores</h2>
+        </div>
+        <div class="tables-container">
+          <h2>Torneio de equipes</h2>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
